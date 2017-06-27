@@ -32,6 +32,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var accelYProgress: UIProgressView!
     @IBOutlet weak var accelZProgress: UIProgressView!
 
+    @IBOutlet weak var magicMultiplierSlider: UISlider!
+    @IBOutlet weak var ugasanieSlider: UISlider!
+    @IBOutlet weak var vozvratSlider: UISlider!
+    
+    
+    
     var xVelocity = 0.0;
     var yVelocity = 0.0;
     var zVelocity = 0.0;
@@ -40,7 +46,9 @@ class ViewController: UIViewController {
     
     let ACCEL_TRESHOLD = 0.15
     let SAMPLE_T = 0.032
-    let MAGIC_MULTIPLIER = 30000.0
+    var MAGIC_MULTIPLIER = 30000.0
+    var UGASANIE = 0.9
+    var VOZVRAT = 0.75
 
     @IBAction func resetPepe(_ sender: Any) {
         imageView.transform = CGAffineTransform(translationX: CGFloat(0.0), y: CGFloat(0.0))
@@ -56,6 +64,10 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.UGASANIE = Double(self.ugasanieSlider.value)
+        self.MAGIC_MULTIPLIER = Double(self.magicMultiplierSlider.value)
+        self.VOZVRAT = Double(self.vozvratSlider.value)
 
         imageView.layer.minificationFilter = kCAFilterTrilinear
         imageView.layer.minificationFilterBias = 0.1
@@ -109,12 +121,12 @@ class ViewController: UIViewController {
                     if (abs(acceleration.z) > self!.ACCEL_TRESHOLD) {
                         self!.zVelocity += acceleration.z * self!.SAMPLE_T
                     }
-                    self!.xVelocity = self!.xVelocity * 0.75
-                    self!.yVelocity = self!.yVelocity * 0.75
-                    self!.zVelocity = self!.zVelocity * 0.75
+                    self!.xVelocity = self!.xVelocity * self!.UGASANIE
+                    self!.yVelocity = self!.yVelocity * self!.UGASANIE
+                    self!.zVelocity = self!.zVelocity * self!.UGASANIE
                     
-                    self!.lastCorrectionX = self!.lastCorrectionX * 0.9
-                    self!.lastCorrectionY = self!.lastCorrectionY * 0.9
+                    self!.lastCorrectionX = self!.lastCorrectionX * self!.VOZVRAT
+                    self!.lastCorrectionY = self!.lastCorrectionY * self!.VOZVRAT
 
                     print(String(format: "%f\t%f\t%f\t%f\t%f\t%f", acceleration.x, self!.xVelocity, acceleration.y, self!.yVelocity, acceleration.z, self!.zVelocity))
 
@@ -152,6 +164,19 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func magicMultSliderValueChanged(_ sender: Any) {
+        self.MAGIC_MULTIPLIER = Double(self.magicMultiplierSlider.value)
+    }
+    
+    
+    @IBAction func ugasanieSliderValueChanged(_ sender: Any) {
+        self.UGASANIE = Double(self.ugasanieSlider.value)
+    }
+    
+    
+    @IBAction func vozvratSliderValueChanged(_ sender: Any) {
+        self.VOZVRAT = Double(self.vozvratSlider.value)
+    }
 
 
 }
