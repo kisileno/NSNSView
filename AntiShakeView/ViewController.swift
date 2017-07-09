@@ -93,10 +93,7 @@ class ViewController: UIViewController {
 
 
                 }
-
-                if let attitude = data?.attitude {
-//                    print("attidate ", attitude)
-                }
+                
 
                 if let acceleration = data?.userAcceleration {
 //                    print("acceleration ", acceleration)

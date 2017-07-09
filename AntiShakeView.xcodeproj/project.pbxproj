@@ -13,6 +13,7 @@
 		4D6F92D31EE4E72900836C1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D6F92D11EE4E72900836C1D /* Main.storyboard */; };
 		4D6F92D51EE4E72900836C1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D6F92D41EE4E72900836C1D /* Assets.xcassets */; };
 		4D6F92D81EE4E72900836C1D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D6F92D61EE4E72900836C1D /* LaunchScreen.storyboard */; };
+		4DFBE0221F11A25600B6D602 /* AppIcon.appiconset in Resources */ = {isa = PBXBuildFile; fileRef = 4DFBE0211F11A25600B6D602 /* AppIcon.appiconset */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		4D6F92D41EE4E72900836C1D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D6F92D71EE4E72900836C1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4D6F92D91EE4E72900836C1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4DFBE0211F11A25600B6D602 /* AppIcon.appiconset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AppIcon.appiconset; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				4D6F92CF1EE4E72900836C1D /* ViewController.swift */,
 				4D6F92D11EE4E72900836C1D /* Main.storyboard */,
 				4D6F92D41EE4E72900836C1D /* Assets.xcassets */,
+				4DFBE0211F11A25600B6D602 /* AppIcon.appiconset */,
 				4D6F92D61EE4E72900836C1D /* LaunchScreen.storyboard */,
 				4D6F92D91EE4E72900836C1D /* Info.plist */,
 			);
@@ -130,6 +133,7 @@
 				4D6F92D81EE4E72900836C1D /* LaunchScreen.storyboard in Resources */,
 				4D6F92D51EE4E72900836C1D /* Assets.xcassets in Resources */,
 				4D6F92D31EE4E72900836C1D /* Main.storyboard in Resources */,
+				4DFBE0221F11A25600B6D602 /* AppIcon.appiconset in Resources */,
 				4D1242941EE51D7F0061AA11 /* feels.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
